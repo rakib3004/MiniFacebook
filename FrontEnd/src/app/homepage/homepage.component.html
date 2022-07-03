@@ -1,0 +1,100 @@
+<!-- <nav>
+    <div class="nav-left">
+        <img src="assets/images/logo.png" alt="logo" class="logo" routerLink="/homepage">
+        <ul>
+            <li><img src="assets/images/notification.png" alt=""></li>
+            <li><img src="assets/images/inbox.png" alt=""></li>
+            <li><img src="assets/images/video.png" alt=""></li>
+        </ul>
+    </div>
+    <div class="nav-right">
+        <div class="search-box">
+            <img src="assets/images/search.png" alt="">
+            <input type="text" placeholder="search">
+        </div>
+        <div class="nav-user-icon online">
+            <img src="assets/images/r.png" alt="">
+        </div>
+    </div>
+    
+</nav>
+
+
+<div class="container">
+    <div class="left-sidebar"></div>
+    <div class="main-content"></div>
+    <div class="right-sidebar"></div>
+</div> -->
+
+
+
+
+<!-- <div class="row" style="margin-top:40px; background-color:#eff0f2;
+-webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);"> -->
+  
+
+  <!-- <div class="col-sm-12">
+      <div class="jumbotron">
+          <h1 class="display-4">Hello, {{username}}!</h1>
+          <p class="lead">You have successfully logged in to our system.</p>
+          <hr class="my-4">
+          <p>Thanks to bootstrap for making wonderful UI to make development fast.</p>
+          <p class="lead" style="color:white;">
+            <a class="btn btn-primary btn-lg" role="button" (click)="logout()">Log Out</a>
+          </p>
+        </div>
+  </div>
+</div>
+Footer
+ -->
+
+
+
+
+ <nav class="flex-div">
+    <div class="nav-left flex-div">
+      <img
+        src="assets/images/menu.png"
+        class="menu-icon"
+        (click)="menuButtonClickEvent()"
+      />
+      <a href="#"> <img src="assets/images/logo.png" class="logo" alt="" /> </a>
+      
+    </div>
+  
+    <!-- <div class="nav-middle flex-div">
+      <div class="search-box flex-div">
+        <input type="text" placeholder="Search" />
+        <img src="assets/images/search.png" alt="" />
+        
+      </div>
+    </div> -->
+  
+    <div class="nav-right flex-div">
+      <!-- <button *ngIf="!accService.loginObject" class="btn btn-success" (click)="signin()">Sign In</button>
+      <button *ngIf="accService.loginObject" class="btn btn-danger " (click)="signout()">Sign Out</button> -->
+      <img src="assets/images/r.png" class="user-icon" alt="User-Icon">
+    </div>
+  </nav>
+  
+  <!--sidebar-->
+  <div class="sidebar" [class.small-sidebar]="click == 0">
+    <div class="shortcut-links">
+      <a href=""><img src="assets/images/home.png" /><p>Home</p></a>
+      <a href="" routerLink="favList"><img src="assets/images/favlist.png" /><p>Favourite List</p></a>
+      <a href="" routerLink="history"><img src="assets/images/history.png" /><p>History</p></a>
+      <a href="" routerLink="about-us"><img src="assets/images/about.png" /><p>About Us</p></a>
+      <hr />
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="story-gallery">
+        <div class="story">
+            <img src="assets/images/upload.png" alt="">
+            <p>Post Stroy</p>
+        </div>
+    </div>
+  </div>

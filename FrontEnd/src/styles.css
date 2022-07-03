@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    background: #fff;
+}
+body::before {
+    position: absolute;
+    content: "";
+    background: white;
+    width: 100%;
+    height: 100vh;
+    top: -70px;
+    opacity: 0.6;
+  }
