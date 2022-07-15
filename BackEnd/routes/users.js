@@ -36,8 +36,15 @@ async function addToDB(req, res) {
 
 }
 
+async function authenticate(req,res){
+  if(await User.findOne({email:req.body.email, password:req.body.password})){
+    res.send(true);
+  }
+}
+
 router.post('/login',function(req,res,next){
   console.log(req.body);
+
     // passport.authenticate('local', function(err, user, info) {
     //   if (err) { return res.status(501).json(err); }
     //   if (!user) { return res.status(501).json(info); }
