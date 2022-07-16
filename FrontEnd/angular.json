@@ -5,11 +5,7 @@
   "projects": {
     "FrontEnd": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -102,5 +98,7 @@
       }
     }
   },
-  "defaultProject": "FrontEnd"
+  "cli": {
+    "analytics": "978e6d7a-606e-40f5-88c3-3c20d55845ac"
+  }
 }

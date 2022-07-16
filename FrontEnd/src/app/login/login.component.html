@@ -1,74 +1,39 @@
 <div class="main-container">
-  <!-- main container -->
-  <div class="content">
-      <!-- logo container -->
-     <div class="left-content">
-         <div class="f-logo">
-             <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Facebook" />
-             <!-- <img src="assets/images/mini-logo.png" alt="Facebook" /> -->
-         </div>
-         <h2 class="f-quote">Facebook helps you connect and share with the people in your life.</h2>
-     </div>
-     <!-- login form -->
-     <div class="right-content">
-         <div class="card">
-             <form [formGroup]="loginForm">
-                 <div class="input-container">
-                     <input type="email" formControlName="email" class="form-control" placeholder="Email address" aria-describedby="emailHelp">
-                 </div>
-                 <div class="input-container">
-                      <input type="password" placeholder="Password" formControlName="password" class="form-control" aria-describedby="passHelp">
-                  </div>
-                  <div class="login-btn-container">
-                      <button class="login-btn" (click)="login()">Log In</button>
-                  </div>
-             </form>
-
-             <div class="forgotten-password">
-                 <a href="#">Forgotten Password?</a>
-             </div>
-
-             <div class="divider"></div>
-
-             <div class="" style="text-align: center;">
-                 <a class="crt-new-ac" routerLink="/register">Create New Account</a>
-             </div>
-         </div>
-         <!-- <div class="crt-page">
-             <a href="#">Create a Page </a>
-             <span>for a celebrity, band or business.</span>
-         </div> -->
-     </div>
+    <!-- main container -->
+    <div class="content">
+        <!-- logo container -->
+       <div class="left-content">
+           <div class="f-logo">
+               <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Facebook" />
+               <!-- <img src="assets/images/mini-logo.png" alt="Facebook" /> -->
+           </div>
+           <h2 class="f-quote">Facebook helps you connect and share with the people in your life.</h2>
+       </div>
+       <!-- login form -->
+       <div class="right-content">
+           <div class="card">
+               <form [formGroup]="loginForm">
+                   <div class="input-container">
+                       <input type="email" formControlName="email" class="form-control" placeholder="Email address" aria-describedby="emailHelp">
+                   </div>
+                   <div class="input-container">
+                        <input type="password" placeholder="Password" formControlName="password" class="form-control" aria-describedby="passHelp">
+                    </div>
+                    <div class="login-btn-container">
+                        <button class="login-btn" (click)="login()">Log In</button>
+                    </div>
+               </form>
+  
+               <div class="forgotten-password">
+                   <a href="#">Forgotten Password?</a>
+               </div>
+  
+               <div class="divider"></div>
+  
+               <div class="" style="text-align: center;">
+                   <a class="crt-new-ac" routerLink="/register">Create New Account</a>
+               </div>
+           </div>
+       </div>
+    </div>
   </div>
-</div>
-
-
-<!-- <div class="row" style="margin-top:40px; padding:20px; background-color:#eff0f2;border-radius:15px;
--webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
--moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
-  <div class="col-sm-12" style="text-align:center;">
-    Login
-  </div>
-
-  <div class="col-sm-12">
-    <form [formGroup]="loginForm">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="passwordInput">Password</label>
-        <input formControlName="password" type="password" class="form-control" id="passwordInput" aria-describedby="passHelp" placeholder="password">
-        <small id="passHelp" class="form-text text-muted"></small>
-      </div>
-
-      <div class="form-group" style="text-align:center;">
-          <button type="button" class="btn btn-dark" (click)="login()">Log in</button>
-          <button type="button" class="btn btn-secondary" (click)="moveToRegister()">Register</button>
-      </div>
-    </form>
-  </div>
-</div> -->
-

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
-
 
 @Component({
   selector: 'app-login',
@@ -26,6 +25,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     if(!this.loginForm.valid){
+      alert("invalid form");
       console.log('Invalid');return;
     }
     
