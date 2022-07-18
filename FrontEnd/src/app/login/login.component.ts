@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     
     this.userService.login(this.loginForm.value)
     .subscribe(
-      data=>{console.log(data);this._router.navigate(['/homepage']);} ,
+      data=>{console.log("log" ,data);this._router.navigate(['/homepage']);} ,
       error=>console.error(error)
     )
   }

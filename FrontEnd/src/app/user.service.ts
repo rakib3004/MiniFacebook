@@ -17,7 +17,6 @@ export class UserService {
   }
 
   login(body:any){
-    console.log(body)
     return this._http.post('http://localhost:3000/users/login',body,{
       // observe:'body',
       // withCredentials:true,
