@@ -10,6 +10,11 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnInit {
 
+  inputStatus: Number = 0;
+
+  
+  serverErrorMessages: string | undefined;
+
   loginForm : FormGroup=new FormGroup({
     email:new FormControl(null,[Validators.email,Validators.required]),
     password:new FormControl(null, Validators.required)
@@ -17,21 +22,25 @@ export class LoginComponent implements OnInit {
   constructor(private _router:Router,private userService:UserService) { }
 
   ngOnInit() {
+    if(this.userService.isLoggedIn()) this._router.navigate(['/homepage']);
   }
 
   moveToRegister(){
     this._router.navigate(['/register']);
   }
+  
 
   login(){
     if(!this.loginForm.valid){
-      alert("invalid form");
-      console.log('Invalid');return;
+      this.inputStatus = 1;
+      return;
     }
     
-    this.userService.login(this.loginForm.value)
-    .subscribe(
-      data=>{console.log("log" ,data);this._router.navigate(['/homepage']);} ,
+    this.userService.login(this.loginForm.value).subscribe(
+      data =>{
+        this.userService.setToken(data['token']);
+        this._router.navigate(['/homepage']);
+      } ,
       error=>console.error(error)
     )
   }

@@ -10,9 +10,10 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent implements OnInit {
 
+  inputStatus: Number = 0;
+
   registerForm = this.formBuilder.group({
     email:new FormControl(null,[Validators.email,Validators.required]),
-    username:new FormControl(null,Validators.required),
     password:new FormControl(null,Validators.required),
     cpass:new FormControl(null,Validators.required)
   })
@@ -26,19 +27,27 @@ export class RegisterComponent implements OnInit {
   }
 
   register(){
-    if(!this.registerForm.valid || (this.registerForm.get('password')?.value != this.registerForm.get('cpass')?.value)){
-      alert('Invalid Form'); return;
+    this.inputStatus = 0;
+    if(!this.registerForm.valid ){
+      this.inputStatus = 1;
+      return;
+    }
+    else if((this.registerForm.get('password')?.value != this.registerForm.get('cpass')?.value)){
+      this.inputStatus = 2;
+      return;
     }
 
-    this.userService.register(this.registerForm.value)
-    .subscribe(
+    this.inputStatus = 0;
+    this.userService.register(this.registerForm.value).subscribe(
       data=> {
-        console.log(data); 
         if(JSON.stringify(data)=="false"){
+          this.inputStatus = 3;
           this.registerForm.reset();
-          alert("Email Address already used in an account");
         }
-        else this._router.navigate(['/login']);
+        else {
+          alert("Congratulations!!!! You have Successfully Registerd. You can Log in Now.")
+          this._router.navigate(['/login']);
+        }
       },
       error=>console.error(error)
     )

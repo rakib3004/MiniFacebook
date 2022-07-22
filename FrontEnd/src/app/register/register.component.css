@@ -5,6 +5,27 @@
   p{
     text-align: center;
   }
+.alert-box-container{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -50px;
+}
+  /* The alert message box */
+.alert {
+  max-width: 400px;
+  max-height: 50px;
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
 
   form {
     width: 425px;
@@ -41,9 +62,10 @@
     border-radius: 5px;
     font-size: 15px;
     margin-left: 12px;
-    margin-top: 30px;
+    margin-top: 40px;
     padding-left: 10px;
   }
+
   /*Input section end*/
   /*Date of birth section start*/
   .sub_title_2 {

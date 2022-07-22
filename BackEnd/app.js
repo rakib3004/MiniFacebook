@@ -3,17 +3,14 @@ var postRouter = require('./routes/posts');
 var usersRouter = require('./routes/users');
 var storyRouter = require('./routes/story');
 
-
-
 const app = express();
-
-const mongoose = require('mongoose');
 
 var cors = require('cors');
 app.use(cors({
     origin:"http://localhost:4200"
 }))
 
+const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/MiniFacebook',
 {
     useNewUrlParser : true
@@ -27,4 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/users', usersRouter);
 app.use('/posts',postRouter)
 
-app.listen(3000,console.log("Listening at 3000"));
+
+let PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is up and running on ${PORT} ...`);
+  });
