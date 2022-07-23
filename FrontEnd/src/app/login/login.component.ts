@@ -9,11 +9,8 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  inputStatus: Number = 0;
-
   
-  serverErrorMessages: string | undefined;
+  serverErrorMessages: string = 'false';
 
   loginForm : FormGroup=new FormGroup({
     email:new FormControl(null,[Validators.email,Validators.required]),
@@ -22,7 +19,8 @@ export class LoginComponent implements OnInit {
   constructor(private _router:Router,private userService:UserService) { }
 
   ngOnInit() {
-    if(this.userService.isLoggedIn()) this._router.navigate(['/homepage']);
+    if(this.userService.isLoggedIn())
+    this._router.navigateByUrl('/home');
   }
 
   moveToRegister(){
@@ -31,18 +29,28 @@ export class LoginComponent implements OnInit {
   
 
   login(){
-    if(!this.loginForm.valid){
-      this.inputStatus = 1;
-      return;
-    }
-    
     this.userService.login(this.loginForm.value).subscribe(
-      data =>{
-        this.userService.setToken(data['token']);
-        this._router.navigate(['/homepage']);
-      } ,
-      error=>console.error(error)
-    )
+      (res:any) => {
+        //this.userService.setCurrentUser(res['currentUser']);
+        this.userService.setToken(res['token']);
+        this._router.navigateByUrl('/home');
+      },
+      err => {
+        this.serverErrorMessages = err.error.message;
+      }
+    );
+    // if(!this.loginForm.valid){
+    //   this.serverErrorMessages = "Invalid Email or Password!!!!";
+    //   return;
+    // }
+    
+    // this.userService.login(this.loginForm.value).subscribe(
+    //   res =>{
+    //     //this.userService.setToken(res['token']);
+    //     this._router.navigate(['/homepage']);
+    //   } ,
+    //   error=>console.error(error)
+    // )
   }
 
 }

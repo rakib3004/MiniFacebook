@@ -14,6 +14,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatListModule} from '@angular/material/list';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,11 @@ import {MatListModule} from '@angular/material/list';
     MatDialogModule,
     MatListModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }, AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

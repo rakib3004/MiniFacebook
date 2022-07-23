@@ -13,14 +13,8 @@
        <!-- login form -->
        <div class="right-content">
         <div class="alert-box-container">
-            <div *ngIf="inputStatus==1" class="alert">
-              Invalid Email or Password!!!
-            </div>
-            <div *ngIf="inputStatus==2" class="alert">
-              Wrong Password!!! 
-            </div>
-            <div *ngIf="inputStatus==3" class="alert">
-              This email don't have an account. Please Create an account first....
+            <div class="alert" *ngIf="serverErrorMessages!='false'">
+                {{serverErrorMessages}}
             </div>
           </div>
            <div class="card">

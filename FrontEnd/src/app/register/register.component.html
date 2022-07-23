@@ -1,14 +1,12 @@
 
 <div class="main">
   <div class="alert-box-container">
-    <div *ngIf="inputStatus==1" class="alert">
-      Invalid Email or Password!!!
+    <div class="success" *ngIf="showSucessMessage">
+      Congratulations!!! Your Account Created Successfully. You can Login Now.
     </div>
-    <div *ngIf="inputStatus==2" class="alert">
-      Password Mismatch!!!!
-    </div>
-    <div *ngIf="inputStatus==3" class="alert">
-      Email Already Used in an Account!!!
+    <!-- Error message -->
+    <div class="alert" *ngIf="serverErrorMessages!='false'">
+      {{serverErrorMessages}}
     </div>
   </div>
 

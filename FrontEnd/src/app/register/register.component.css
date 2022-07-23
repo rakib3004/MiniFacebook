@@ -21,6 +21,15 @@
   margin-bottom: 15px;
   text-align: center;
 }
+.success {
+  max-width: 400px;
+  max-height: 50px;
+  padding: 20px;
+  background-color: green; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
 
 /* When moving the mouse over the close button */
 .closebtn:hover {

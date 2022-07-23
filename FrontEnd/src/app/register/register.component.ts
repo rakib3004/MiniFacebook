@@ -10,7 +10,8 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  inputStatus: Number = 0;
+  showSucessMessage: boolean = false;
+  serverErrorMessages: string = 'false';
 
   registerForm = this.formBuilder.group({
     email:new FormControl(null,[Validators.email,Validators.required]),
@@ -27,29 +28,26 @@ export class RegisterComponent implements OnInit {
   }
 
   register(){
-    this.inputStatus = 0;
-    if(!this.registerForm.valid ){
-      this.inputStatus = 1;
-      return;
-    }
-    else if((this.registerForm.get('password')?.value != this.registerForm.get('cpass')?.value)){
-      this.inputStatus = 2;
+    
+    if((this.registerForm.get('password')?.value != this.registerForm.get('cpass')?.value)){
+      this.serverErrorMessages = "Password Mismatched!!!!";
       return;
     }
 
-    this.inputStatus = 0;
-    this.userService.register(this.registerForm.value).subscribe(
-      data=> {
-        if(JSON.stringify(data)=="false"){
-          this.inputStatus = 3;
-          this.registerForm.reset();
-        }
-        else {
-          alert("Congratulations!!!! You have Successfully Registerd. You can Log in Now.")
-          this._router.navigate(['/login']);
-        }
+    this.serverErrorMessages='false';
+    this.userService.postUser(this.registerForm.value).subscribe(
+      res => {
+        this.showSucessMessage = true;
+        setTimeout(() => {this.showSucessMessage = false; this._router.navigate(['/login'])}, 3000);
+        this.registerForm.reset();
       },
-      error=>console.error(error)
+      err => {
+        if (err.status === 422) {
+          this.serverErrorMessages = err.error.join('<br/>');
+        }
+        else
+          this.serverErrorMessages = 'Opps!! Server not Responding. Please contact admin.';
+      }
     )
      
   }

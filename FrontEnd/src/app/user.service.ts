@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,23 +13,42 @@ export class UserService {
 
   constructor(private _http:HttpClient) { }
 
-  register(body:any){
-    return this._http.post('http://localhost:3000/users/register',body);
+  postUser(user:any){
+    return this._http.post(environment.apiBaseUrl+'/register',user,this.noAuthHeader);
   }
 
-  login(logInfo:any){
-    return this._http.post('http://localhost:3000/users/login',logInfo,this.noAuthHeader);
+  login(authCredentials:any) {
+    return this._http.post(environment.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader);
   }
+
+  getUserProfile() {
+    return this._http.get(environment.apiBaseUrl + '/userProfile');
+  }
+
 
   //Helper Methods
 
-  setToken(token: string) {
+  setToken(token: any) {
     localStorage.setItem('token', token);
   }
+
+ 
+
+  getCurrentUser(){
+    return localStorage.getItem('curentUser');
+  }
+
+  
 
   getToken() {
     return localStorage.getItem('token');
   }
+
+  deleteToken() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('curentUser');
+  }
+
 
   getUserPayload() {
     var token = this.getToken();

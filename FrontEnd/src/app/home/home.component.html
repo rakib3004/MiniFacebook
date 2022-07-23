@@ -1,138 +1,98 @@
-<nav class="flex-div">
-    <div class="nav-left flex-div">
-      <img
-        src="assets/fb-icon.png"
-        class="menu-icon"
-      />
-      <a href="#"> <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" class="logo" alt="Facebook" /> </a>
-      
+<nav>
+    <div class="nav-left">
+        <img src="../assets/fb-icon.png" alt="Logo">
+        <a href="#" > <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" class="logo" alt="Facebook" /> </a>
     </div>
-  
-    <div class="nav-right flex-div">
-      <img src="assets/images/r.png" class="user-icon" alt="User-Icon">
+
+    <div class="nav-middle">
+        {{currentUserEmail}}
+    </div>
+    <div class="nav-right">
+        <button (click)="Logout()" type="button" class="btn btn-danger">log out</button>
     </div>
 </nav>
-  
 
 
-<div class="main-body">
-    <div class="story-wrapper">
-        <div class="story_q">
-        <div class="story">
+<div class="container">
+    <div class="left-panel">
+        <ul>
+            <li>
+                <span class="profile"></span>
+                <p>{{currentUserEmail}}</p>
+            </li>
+        </ul>
+    </div>
 
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1116.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="" alt="" class="avatar">
-                    <h4>Add to Story</h4>
+
+    <div class="middle-panel">
+
+        <div class="story-section">
+
+            <div class="story create">
+                <div class="dp-image">
+                    <img src="assets/avatar.png" alt="__">
                 </div>
+
+                <div *ngIf="createStoryClicked==1" class="mine">
+                    <input type="file" accept="image/*" (change)="saveStory($event)">
+                    <div class="card-img" alt="..."></div>
+                    <!-- <button class="btn card-img" (click)="file.click()">
+                        <h5 class="card-title" style="color:#828ea8;">Add Story</h5>
+                    </button> -->
+                </div>
+                
+                <!-- <input *ngIf="createStoryClicked==1" type="file" id="myFile" name="filename">
+                <hr *ngIf="createStoryClicked==1">
+                <input *ngIf="createStoryClicked==1" type="submit" (click)="addStory()"> -->
+                
+                <span *ngIf="createStoryClicked==0" (click)="changeStoryClicked()" class="dp-container">                     
+                    <!-- <input type="file" class="fa fa-plus"> -->
+                    <!-- <i class="fa fa-plus"></i> -->
+                </span>
+                <span class="name">Create Story</span>  
             </div>
 
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1101.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1101.jpg" alt="" class="avatar">
-                    <h4>Mohsin Amin</h4>
+            
+            <div *ngFor="let story of allStories" class="story">
+                <img class="story-bg" src={{story.storyUUID}} alt="....">
+                <div class="dp-container">
+                    <img src="assets/avatar.png" alt="">
                 </div>
+                <p class="name">{{story.name}}</p>
             </div>
 
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1102.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1102.jpg" alt="" class="avatar">
-                    <h4>Fahim Morshed</h4>
+        </div>
+
+        <div class="post create">
+            <div class="post-top">
+                <div class="dp">
+                    <img src="assets/bsse1106.jpg" alt="">
                 </div>
+                <input type="text" placeholder="What's on your mind..?" [(ngModel)] = "postDetails.text" [ngModelOptions]="{standalone: true}"/>
+            </div>
+            <button (click)="UploadPost()">Post</button>
+        </div>
+
+        <div class="post" *ngFor="let post of allPosts;">
+            <div class="post-top">
+                <div class="dp">
+                    <img src="assets/avatar.png" alt="">
+                </div>
+                <div class="post-info">
+                    <p class="name">{{post.email}}</p>
+                    <span class="time">{{post.creation_dt}}</span>
+                </div>
+                <i class="fas fa-ellipsis-h"></i>
             </div>
 
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1103.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1103.jpg" alt="" class="avatar">
-                    <h4>Mahtab Jhalak</h4>
-                </div>
+            <div class="post-content">
+               {{post.text}}
             </div>
-
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1104.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1104.jpg" alt="" class="avatar">
-                    <h4>Md Siam</h4>
-                </div>
-            </div>
-
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1105.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1105.jpg" alt="" class="avatar">
-                    <h4>Fahad Hossain</h4>
-                </div>
-            </div>
-
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1106.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1106.jpg" alt="" class="avatar">
-                    <h4>Hasnain Iqbal Shirsho</h4>
-                </div>
-            </div>
-
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1107.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1107.jpg" alt="" class="avatar">
-                    <h4>Noshin Samiha</h4>
-                </div>
-            </div>
-
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1108.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1108.jpg" alt="" class="avatar">
-                    <h4>Shakib Ahmed</h4>
-                </div>
-            </div>
-
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1109.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1109.jpg" alt="" class="avatar">
-                    <h4>Jafar Mahin</h4>
-                </div>
-            </div>
-
-            <div class="story_s">
-                <img class="story-bg" src="assets/bsse1110.jpg" alt="">
-                <div class="story-overlay"></div>
-                <div class="story-text">
-                    <img src="assets/bsse1110.jpg" alt="" class="avatar">
-                    <h4>Mushfiqur Rahman Chowdhury</h4>
-                </div>
-            </div> 
             
         </div>
+
     </div>
 
-    <div class="status-input-box">
-        
-    </div>
-    
-    <div class="status-wrapper">
-        <div class="card">
-
-        </div>
-    </div>
-
+    <div class="right-panel"></div>
 </div>
-</div>
-
 
