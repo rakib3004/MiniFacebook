@@ -10,7 +10,7 @@ module.exports.savePost = (req, res, next) => {
     });
   
     let promise = newPost.save();
-  
+
     promise.then((doc=>{
         return res.status(201).json(doc);
     }))
@@ -21,12 +21,9 @@ module.exports.savePost = (req, res, next) => {
 }
 
 module.exports.getPosts = (req, res, next) => {
-    var currentUser = req.params.currentUser;
+    console.log(req.params.currentUser);
     let posts = Post.find({email:{$ne: req.params.currentUser}}).limit(10).sort({$natural:-1});
-
     posts.exec((req, doc) =>{
-        console.log(doc);
         return res.status(200).json(doc);
     })
-    //return res.status(200).json(posts);
 }

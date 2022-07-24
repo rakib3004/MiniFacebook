@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { __await } from 'tslib';
 import { PostService } from '../post.service';
 import { StoryService } from '../story.service';
 import { UserService } from '../user.service';
@@ -29,8 +30,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentUser();
-    this.getPosts();
-    this.getStories();
   }
 
   //getCurrentUserProfile
@@ -39,6 +38,8 @@ export class HomeComponent implements OnInit {
       (res:any) => {
         this.userDetails = res['user'];
         this.currentUserEmail = this.userDetails.email;
+        this.getPosts();
+        this.getStories();
       },
       err => { 
         this.serverErrorMessages = err.error.message;
@@ -81,6 +82,7 @@ export class HomeComponent implements OnInit {
       (res:any) => {
         alert("Post Uploaded Successfuly!!!");
         this.getPosts();
+        this.router.navigate(['/login']);
       },
       err => {
         this.serverErrorMessages = err.error.message;
@@ -99,7 +101,7 @@ export class HomeComponent implements OnInit {
     if (this.imageFile) {
       var imageDetails = new FormData();
       imageDetails.append('files', this.imageFile, this.imageFile.name);
-      imageDetails.append('name', this.currentUserEmail);
+      imageDetails.append('email', this.currentUserEmail);
 
       this.storyService.saveStory(imageDetails).subscribe(
         (res:any) => {
