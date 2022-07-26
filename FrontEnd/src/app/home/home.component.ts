@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   serverErrorMessages: string = 'false';
   storyImageBaseUrl = "http://127.0.0.1:9000/stories/";
+  currentUserName:any;
   currentUserEmail:any;
   allPosts:any;
   createStoryClicked = 0;
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
   allStories:any;
   userDetails: any;
   postDetails ={
-    email :'',
+    email:'',
+    name :'',
     text:''
   };
 
@@ -78,6 +80,8 @@ export class HomeComponent implements OnInit {
 
   UploadPost(){
     this.postDetails.email = this.currentUserEmail;
+    this.postDetails.name = this.currentUserName;
+
     this.postService.savePost(this.postDetails).subscribe(
       (res:any) => {
         alert("Post Uploaded Successfuly!!!");

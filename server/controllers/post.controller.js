@@ -5,6 +5,7 @@ module.exports.savePost = (req, res, next) => {
     // call for passport authentication
     var newPost = new Post({
         email: req.body.email,
+        name: req.body.name,
         text: req.body.text,
         creation_dt: Date.now()
     });
