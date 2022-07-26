@@ -9,8 +9,8 @@ module.exports.saveStory = (async (req, res) => {
         endPoint: '127.0.0.1',
         port: 9000,
         useSSL: false,
-        accessKey: 'p5K6iMr8vA5OkthO',
-        secretKey: 'nSFvxXOh8U6me3GKadM0f8N4RarvfEo3'
+        accessKey: 'ulDoUo3BcZ0HK4P4',
+        secretKey: 'JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo'
     });
 
     var uuidName = crypto.randomUUID();
