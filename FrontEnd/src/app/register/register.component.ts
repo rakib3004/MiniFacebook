@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   serverErrorMessages: string = 'false';
 
   registerForm = this.formBuilder.group({
+    name:new FormControl(null,Validators.required),
     email:new FormControl(null,[Validators.email,Validators.required]),
     password:new FormControl(null,Validators.required),
     cpass:new FormControl(null,Validators.required)
@@ -46,7 +47,7 @@ export class RegisterComponent implements OnInit {
           this.serverErrorMessages = err.error.join('<br/>');
         }
         else
-          this.serverErrorMessages = 'Opps!! Server not Responding. Please contact admin.';
+          this.serverErrorMessages = 'Opps!! Server not Responding. Please Try Again';
       }
     )
      
