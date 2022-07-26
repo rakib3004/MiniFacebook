@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
       (res:any) => {
         this.userDetails = res['user'];
         this.currentUserEmail = this.userDetails.email;
+        this.currentUserName = this.userDetails.name;
         this.getPosts();
         this.getStories();
       },
