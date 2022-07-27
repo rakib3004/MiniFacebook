@@ -28,7 +28,7 @@
 
             <div class="story create">
                 <div class="dp-image">
-                    <img src="assets/avatar.png" alt="__">
+                    <img src={{profilePhoto}} alt="__">
                 </div>
 
                 <div *ngIf="createStoryClicked==1" class="mine">
@@ -49,7 +49,7 @@
             <div *ngFor="let story of allStories" class="story">
                 <img class="story-bg" src={{story.storyUUID}} alt="....">
                 <div class="dp-container">
-                    <img src="assets/avatar.png" alt="">
+                    <img src={{profilePhoto}} alt="">
                 </div>
                 <p class="name">{{story.name}}</p>
             </div>
@@ -59,7 +59,7 @@
         <div class="post create">
             <div class="post-top">
                 <div class="dp">
-                    <img src="assets/atom.png" alt="">
+                    <img src={{profilePhoto}} alt="">
                 </div>
                 <input type="text" placeholder="What's on your mind..?" [(ngModel)] = "postDetails.text" [ngModelOptions]="{standalone: true}"/>
                 <button class="btn btn-success post-btn"  (click)="UploadPost()">Post</button>

@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
 
   serverErrorMessages: string = 'false';
   storyImageBaseUrl = "http://127.0.0.1:9000/stories/";
+  profileImageBaseUrl = "http://127.0.0.1:9000/profiles/";
+  imageExtention = ".png";
+  profilePhoto:any;
+  firstUserNameLetter:any;
   currentUserName:any;
   currentUserEmail:any;
   allPosts:any;
@@ -41,6 +45,9 @@ export class HomeComponent implements OnInit {
         this.userDetails = res['user'];
         this.currentUserEmail = this.userDetails.email;
         this.currentUserName = this.userDetails.name;
+        this.firstUserNameLetter= this.userDetails.name[0];
+        console.log(this.firstUserNameLetter)
+        this.profilePhoto=this.profileImageBaseUrl+this.firstUserNameLetter+this.imageExtention;
         this.getPosts();
         this.getStories();
       },
