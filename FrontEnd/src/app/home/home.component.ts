@@ -15,21 +15,25 @@ export class HomeComponent implements OnInit {
   serverErrorMessages: string = 'false';
   storyImageBaseUrl = "http://127.0.0.1:9000/stories/";
   profileImageBaseUrl = "http://127.0.0.1:9000/profiles/";
-  imageExtention = ".png";
-  profilePhoto:any;
-  firstUserNameLetter:any;
-  currentUserName:any;
-  currentUserEmail:any;
-  allPosts:any;
-  createStoryClicked = 0;
-  imageFile: File | null = null;
-  allStories:any;
-  userDetails: any;
   postDetails ={
     email:'',
     name :'',
     text:''
   };
+
+
+  imageExtention = ".png";
+  
+  profilePhoto:any;
+  firstUserNameLetter:any;
+  currentUserName:any;
+  currentUserEmail:any;
+  timeLinePosts:any;
+  createStoryClicked = 0;
+  imageFile: File | null = null;
+  timeLineStories:any;
+  userDetails: any;
+ 
 
   constructor(private userService: UserService, private router: Router, 
     private postService: PostService, private storyService:StoryService) { }
@@ -61,7 +65,7 @@ export class HomeComponent implements OnInit {
   getPosts(){
     this.postService.getPosts(this.currentUserEmail).subscribe(
       (res:any) => {
-        this.allPosts = res;
+        this.timeLinePosts = res;
       },
       err => {
         this.serverErrorMessages = err.error.message;
@@ -74,9 +78,9 @@ export class HomeComponent implements OnInit {
   getStories(){
     this.storyService.getStories(this.currentUserEmail).subscribe(
       (res:any) =>{
-        this.allStories = res;
+        this.timeLineStories = res;
         //change story url 
-        this.allStories.forEach((story:any) => {
+        this.timeLineStories.forEach((story:any) => {
           story.storyUUID = this.storyImageBaseUrl+story.storyUUID;
         });
     },

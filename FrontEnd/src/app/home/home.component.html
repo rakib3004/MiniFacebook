@@ -54,7 +54,7 @@
             </div>
 
             
-            <div *ngFor="let story of allStories" class="story">
+            <div *ngFor="let story of timeLineStories" class="story">
                 <img class="story-bg" src={{story.storyUUID}} alt="....">
                 <div class="dp-container">
                     <img src={{profileImageBaseUrl+story.name[0]+imageExtention}}  alt="">
@@ -75,7 +75,7 @@
             
         </div>
 
-        <div class="post" *ngFor="let post of allPosts;">
+        <div class="post" *ngFor="let post of timeLinePosts;">
             <div class="post-top">
                 <div class="dp">
                     <img src={{profileImageBaseUrl+post.name[0]+imageExtention}} alt="">
