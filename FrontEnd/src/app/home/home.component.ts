@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { __await } from 'tslib';
 import { PostService } from '../post.service';
 import { StoryService } from '../story.service';
@@ -13,8 +14,8 @@ import { UserService } from '../user.service';
 export class HomeComponent implements OnInit {
 
   serverErrorMessages: string = 'false';
-  storyImageBaseUrl = "http://127.0.0.1:9000/stories/";
-  profileImageBaseUrl = "http://127.0.0.1:9000/profiles/";
+  storyImageBaseUrl = environment.storyBaseUrl;
+  profileImageBaseUrl = environment.profileBaseUrl;
   postDetails ={
     email:'',
     name :'',
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
   };
 
 
-  imageExtention = ".png";
+  imageExtention = environment.imgExt;
   
   profilePhoto:any;
   firstUserNameLetter:any;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {FormGroup,FormControl,Validators,FormBuilder} from '@angular/forms';
 import { UserService } from '../user.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -43,11 +44,11 @@ export class RegisterComponent implements OnInit {
         this.registerForm.reset();
       },
       err => {
-        if (err.status === 422) {
+        if (err.status === environment.registrationError) {
           this.serverErrorMessages = err.error.join('<br/>');
         }
         else
-          this.serverErrorMessages = 'Opps!! Server not Responding. Please Try Again';
+          this.serverErrorMessages = environment.serverError;
       }
     )
      

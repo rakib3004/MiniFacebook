@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { UserService } from '../user.service';
 
 @Component({
@@ -11,6 +12,8 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
   
   serverErrorMessages: string = 'false';
+
+  facebookLogo = environment.fbLogo;
 
   loginForm : FormGroup=new FormGroup({
     email:new FormControl(null,[Validators.email,Validators.required]),
