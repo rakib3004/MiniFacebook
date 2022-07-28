@@ -9,7 +9,7 @@ export class StoryService {
 
   constructor(private http:HttpClient) { }
 
-  saveStory(postDetails:any){
+  uploadStory(postDetails:any){
     return this.http.post(environment.apiBaseUrl+'/saveStory',postDetails);
   }
   

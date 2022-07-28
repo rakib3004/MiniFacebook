@@ -112,7 +112,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  saveStory(event: any) {
+  uploadStory(event: any) {
     this.createStoryClicked = 0;
     this.imageFile = event.target.files[0];
     if (this.imageFile) {
@@ -122,7 +122,7 @@ export class HomeComponent implements OnInit {
       imageDetails.append('name', this.currentUserName);
 
 
-      this.storyService.saveStory(imageDetails).subscribe(
+      this.storyService.uploadStory(imageDetails).subscribe(
         (res:any) => {
         if(res) { alert("Story Posted Successfully");this.getStories();}
       },err=>{
@@ -132,7 +132,7 @@ export class HomeComponent implements OnInit {
   
   }
 
-  Logout(){
+  logout(){
     this.userService.deleteToken();
     this.router.navigate(['/login']);
   }

@@ -13,7 +13,7 @@
        
     
             
-    <button (click)="Logout()" type="button" class="btn btn-danger p-3 font-weight-bold">log out</button>
+    <button (click)="logout()" type="button" class="btn btn-danger p-3 font-weight-bold">log out</button>
         
     </div>
 </nav>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div *ngIf="createStoryClicked==1" class="mine">
-                    <input type="file" accept="image/*" (change)="saveStory($event)">
+                    <input type="file" accept="image/*" (change)="uploadStory($event)">
                     <div class="card-img" alt="..."></div>
                    
                 </div>
