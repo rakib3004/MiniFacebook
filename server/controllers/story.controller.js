@@ -22,6 +22,7 @@ module.exports.saveStory = (async (req, res) => {
     //Create a new story and save to mongodb
     const newStory = new story({
         email: req.body.email,
+        name: req.body.name,
         storyUUID: uuidName
     });
 

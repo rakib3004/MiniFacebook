@@ -70,7 +70,7 @@
         <div class="post" *ngFor="let post of allPosts;">
             <div class="post-top">
                 <div class="dp">
-                    <img src="assets/atom.png" alt="">
+                    <img src={{profileImageBaseUrl+post.name[0]+imageExtention}} alt="">
                 </div>
                 <div class="post-info">
                     <p class="name">{{post.name}}</p>

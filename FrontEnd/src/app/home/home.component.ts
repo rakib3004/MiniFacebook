@@ -114,6 +114,8 @@ export class HomeComponent implements OnInit {
       var imageDetails = new FormData();
       imageDetails.append('files', this.imageFile, this.imageFile.name);
       imageDetails.append('email', this.currentUserEmail);
+      imageDetails.append('name', this.currentUserName);
+
 
       this.storyService.saveStory(imageDetails).subscribe(
         (res:any) => {
