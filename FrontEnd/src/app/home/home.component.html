@@ -4,9 +4,17 @@
         <a href="#" > <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" class="logo" alt="Facebook" /> </a>
     </div>
 
-  
+   
+
     <div class="nav-right">
-        <button (click)="Logout()" type="button" class="btn btn-danger">log out</button>
+
+            <img style="height: 40px; width: 40px" src={{profilePhoto}} alt="">
+            <h3 class="name mr-4 ml-2"><b>{{currentUserName}}</b></h3>
+       
+    
+            
+    <button (click)="Logout()" type="button" class="btn btn-danger p-3 font-weight-bold">log out</button>
+        
     </div>
 </nav>
 
@@ -49,7 +57,7 @@
             <div *ngFor="let story of allStories" class="story">
                 <img class="story-bg" src={{story.storyUUID}} alt="....">
                 <div class="dp-container">
-                    <img src={{profilePhoto}} alt="">
+                    <img src={{profileImageBaseUrl+story.name[0]+imageExtention}}  alt="">
                 </div>
                 <p class="name">{{story.name}}</p>
             </div>
