@@ -3,14 +3,19 @@ var Minio = require("minio");
 var story = require('../models/story');
 const crypto = require('crypto');
 
+const server_ip = '127.0.0.1'
+const accessKey = 'ulDoUo3BcZ0HK4P4'
+const secretKey = 'JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo'
+const port = 9000
+
 module.exports.saveStory = (async (req, res) => {
     //connect to minio
     const minioClient = new Minio.Client({
-        endPoint: '127.0.0.1',
-        port: 9000,
+        endPoint: server_ip,
+        port: port,
         useSSL: false,
-        accessKey: 'ulDoUo3BcZ0HK4P4',
-        secretKey: 'JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo'
+        accessKey: accessKey,
+        secretKey: secretKey
     });
 
     var uuidName = crypto.randomUUID();
