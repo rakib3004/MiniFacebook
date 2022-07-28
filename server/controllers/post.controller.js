@@ -22,6 +22,7 @@ module.exports.savePost = (req, res, next) => {
 }
 
 module.exports.getPosts = (req, res, next) => {
+    console.log("HI baby")
     console.log(req.params.currentUser);
     let posts = Post.find({email:{$ne: req.params.currentUser}}).limit(10).sort({$natural:-1});
     posts.exec((req, doc) =>{
