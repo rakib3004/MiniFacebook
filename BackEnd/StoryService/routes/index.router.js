@@ -23,9 +23,7 @@ app.use('/uploads', express.static('uploads'));
 
 router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
-router.post('/status', ctrPost.savePost);
 router.post('/story',upload.single("files"), ctrStory.saveStory);
-router.get('/status/:currentUser',ctrPost.getPosts);
 router.get('/story/:currentUser',ctrStory.getStories);
 router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 
