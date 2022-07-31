@@ -23,10 +23,10 @@ app.use('/uploads', express.static('uploads'));
 
 router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
-router.post('/savePost', ctrPost.savePost);
-router.post('/saveStory',upload.single("files"), ctrStory.saveStory);
-router.get('/getPosts/:currentUser',ctrPost.getPosts);
-router.get('/getStories/:currentUser',ctrStory.getStories);
+router.post('/status', ctrPost.savePost);
+router.post('/story',upload.single("files"), ctrStory.saveStory);
+router.get('/status/:currentUser',ctrPost.getPosts);
+router.get('/story/:currentUser',ctrStory.getStories);
 router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 
 module.exports = router;
