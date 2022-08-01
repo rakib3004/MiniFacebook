@@ -30,5 +30,14 @@ app.use((err, req, res, next) => {
     }
 });
 
+app.get('/',(req,res)=>{
+
+    res.status(200).send({
+
+        tshirt: 'T-Shirt',
+        size: 'large'
+    })
+})
+
 // start server
-app.listen(3000, () => console.log(`Server started at port : 3000`));
+app.listen(3002, () => console.log(`Server started at port : 3002`));
