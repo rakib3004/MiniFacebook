@@ -31,4 +31,4 @@ app.use((err, req, res, next) => {
 });
 
 // start server
-app.listen(3004, () => console.log(`Server started at port : 3004`));
+app.listen(3001, () => console.log(`Server started at port : 3004`));
