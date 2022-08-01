@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const ctrlUser = require('../controllers/user.controller');
-const ctrPost = require('../controllers/post.controller');
 const ctrStory = require('../controllers/story.controller');
 const jwtHelper = require('../config/jwtHelper');
 

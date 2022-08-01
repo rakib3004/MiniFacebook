@@ -40,4 +40,4 @@ app.get('/',(req,res)=>{
 })
 
 // start server
-app.listen(3002, () => console.log(`Server started at port : 3002`));
+app.listen(3006, () => console.log(`Server started at port : 3002`));

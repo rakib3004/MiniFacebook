@@ -1,5 +1,5 @@
 require('./config/config');
-require('./models/db');
+require('./db');
 require('./config/passportConfig');
 
 const express = require('express');
