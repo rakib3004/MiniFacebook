@@ -22,7 +22,7 @@ module.exports.register = (req, res, next) => {
 }
 
 
-module.exports.authenticate = (req, res, next) => {
+module.exports.login = (req, res, next) => {
     // call for passport authentication
     passport.authenticate('local', (err, user, info) => {       
         // error from passport middleware
