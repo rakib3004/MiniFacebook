@@ -10,10 +10,10 @@ export class PostService {
   constructor(private http:HttpClient) { }
 
   savePost(postDetails:any){
-    return this.http.post(environment.apiBaseUrl+'status/',postDetails);
+    return this.http.post(environment.apiBaseUrl+'status/status/',postDetails);
   }
 
   getPosts(currentUser:any){
-    return this.http.get(environment.apiBaseUrl+'status/'+currentUser);
+    return this.http.get(environment.apiBaseUrl+'status/status/'+currentUser);
   }
 }
