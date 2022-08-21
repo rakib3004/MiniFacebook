@@ -8,4 +8,4 @@ var schema = new Schema({
     creation_dt:{type:Date, require:true}
 });
 
-module.exports = mongoose.model('Post',schema);
+module.exports = mongoose.model('Status',schema);

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-var Post = require('../models/post');
+var Post = require('../models/status');
 
 module.exports.savePost = (req, res, next) => {
     // call for passport authentication

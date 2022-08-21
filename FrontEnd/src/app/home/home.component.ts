@@ -126,7 +126,6 @@ export class HomeComponent implements OnInit {
         (res:any) => {
         if(res) { alert("Story Upload Successfully");this.getStories();}
       },err=>{
-        alert("Story Failed to Upload");
         this.serverErrorMessages = err.error.message;
       })
     }
