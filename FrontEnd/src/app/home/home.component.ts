@@ -124,8 +124,9 @@ export class HomeComponent implements OnInit {
 
       this.storyService.uploadStory(imageDetails).subscribe(
         (res:any) => {
-        if(res) { alert("Story Posted Successfully");this.getStories();}
+        if(res) { alert("Story Upload Successfully");this.getStories();}
       },err=>{
+        alert("Story Failed to Upload");
         this.serverErrorMessages = err.error.message;
       })
     }
