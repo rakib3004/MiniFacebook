@@ -1,0 +1,144 @@
+[{
+  "_id": {
+    "$oid": "62e1ff92caa1ec227f9e7937"
+  },
+  "email": "bsse1107@iit.du.ac.bd",
+  "name": "Noshin Tahsin Samiha",
+  "storyUUID": "b41bcf62-5fef-4ec5-ad1b-3860cb3f8799",
+  "time": {
+    "$date": {
+      "$numberLong": "1658978194829"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e1ffafcaa1ec227f9e793e"
+  },
+  "email": "bsse1109@iit.du.ac.bd",
+  "name": "Abu Jafar",
+  "storyUUID": "e059e2a7-649d-47d5-8fda-a76cf4f6f69e",
+  "time": {
+    "$date": {
+      "$numberLong": "1658978223303"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e1ffd5caa1ec227f9e7949"
+  },
+  "email": "bsse1106@iit.du.ac.bd",
+  "name": "Hasnain Iqbal Shirsho",
+  "storyUUID": "bce51ba9-53e7-4ce8-aff2-7eccc6b1a5ff",
+  "time": {
+    "$date": {
+      "$numberLong": "1658978261363"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e1ffe6caa1ec227f9e7950"
+  },
+  "email": "bsse1110@iit.du.ac.bd",
+  "name": "Mushfiqur Rahman Chowdhury",
+  "storyUUID": "70dffff4-0aad-439a-a36f-aee3a42bb03e",
+  "time": {
+    "$date": {
+      "$numberLong": "1658978278819"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e20000caa1ec227f9e7957"
+  },
+  "email": "bsse1105@iit.du.ac.bd",
+  "name": "Fahad Hosen",
+  "storyUUID": "01cd7024-2c27-4fbd-a02e-82fd86f0029a",
+  "time": {
+    "$date": {
+      "$numberLong": "1658978304825"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e244a7caa1ec227f9e7a63"
+  },
+  "email": "bsse1117@iit.du.ac.bd",
+  "name": "Raisul Islam Rahat",
+  "storyUUID": "bcb64356-7bab-44cf-afc9-2d0d92d618db",
+  "time": {
+    "$date": {
+      "$numberLong": "1658995879678"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e25063caa1ec227f9e7aae"
+  },
+  "email": "bsse1129@iit.du.ac.bd",
+  "name": "Md. Rakib Trofder",
+  "storyUUID": "67fa14fb-07c2-462d-ba84-a2a53ce4d193",
+  "time": {
+    "$date": {
+      "$numberLong": "1658998883224"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e2982de9a720c8f6788362"
+  },
+  "email": "bsse1128@iit.du.ac.bd",
+  "name": "Tasmia Zerin",
+  "storyUUID": "707e5512-0deb-48a1-8c91-5c55181fe993",
+  "time": {
+    "$date": {
+      "$numberLong": "1659017261574"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e5ef356dcdcc1eb6af95af"
+  },
+  "email": "bsse1119@iit.du.ac.bd",
+  "name": "Jubaer Hosain",
+  "storyUUID": "50873274-bced-4226-adfa-12b32c357086",
+  "time": {
+    "$date": {
+      "$numberLong": "1659236149151"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e5ef756dcdcc1eb6af95b8"
+  },
+  "email": "bsse1118@iit.du.ac.bd",
+  "name": "Khairul Alam",
+  "storyUUID": "4cd19828-a964-49fc-a8c0-ce7f8ec973d3",
+  "time": {
+    "$date": {
+      "$numberLong": "1659236213444"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e6267fc1b7d959c5f9a2bc"
+  },
+  "email": "bsse1102@iit.du.ac.bd",
+  "name": "Fahim Moreshed",
+  "storyUUID": "8f78e52a-fd6e-4808-b7c6-2c27611d2ced",
+  "time": {
+    "$date": {
+      "$numberLong": "1659250303856"
+    }
+  },
+  "__v": 0
+}]
