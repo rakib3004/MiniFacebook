@@ -41,7 +41,7 @@ module.exports.saveStory = (async (req, res) => {
 
 module.exports.getStories = (async (req,res) =>{
     try{
-        const Stories = await story.find({email:{$ne: req.params.currentUser}}).sort({$natural:-1}).limit(10); 
+        const Stories = await story.find({email:{$ne: req.params.currentUser}}).sort({$natural:-1}).limit(20); 
         res.send(Stories);
     } catch(err){
         res.status(400).send({ResponeseMessage: 'Missing Image File'});
