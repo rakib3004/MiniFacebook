@@ -133,4 +133,157 @@
   "password": "$2a$10$uUh/9wonTr3sN3C2zXizVumt2iCwZDLuBlnd/ky1giRDvKrMv0OGG",
   "saltSecret": "$2a$10$uUh/9wonTr3sN3C2zXizVu",
   "__v": 0
+},{
+  "_id": {
+    "$oid": "6301bcb0306a520dce2d8bf3"
+  },
+  "name": "Kazi Muktadir Ahmed",
+  "email": "bsse1111@iit.du.ac.bd",
+  "password": "$2a$10$Grt0pQh.EvxREt.iZtOSOuZnKYEbWzXWmxGN0fhqWbHVhhO0iMIHa",
+  "saltSecret": "$2a$10$Grt0pQh.EvxREt.iZtOSOu",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6301d40e306a520dce2d8c22"
+  },
+  "name": "Tahmeed Mahbub",
+  "email": "bsse1127@iit.du.ac.bd",
+  "password": "$2a$10$SSEAytwYihRTHKZfyn.pueWzN/pmhjcnnhCp/YnnEfOYkVMdhGbrm",
+  "saltSecret": "$2a$10$SSEAytwYihRTHKZfyn.pue",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63034b70fef46c58afdc586f"
+  },
+  "name": "Ashraful Islam Shanto Sikdar",
+  "email": "bsse1124@iit.du.ac.bd",
+  "password": "$2a$10$LWE3mlnAz0tyMJsFIiuAD.z8GcfJERB4Vw8UwBSWPCa5bxk5mJyXu",
+  "saltSecret": "$2a$10$LWE3mlnAz0tyMJsFIiuAD.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63034f5afef46c58afdc587e"
+  },
+  "name": "Mushfiqur Galib",
+  "email": "bsse1130@iit.du.ac.bd",
+  "password": "$2a$10$FA0ou6Hq7.shKiH56T08iepGnsJJQ0rW7fkksCxy20./Q8sizxKn6",
+  "saltSecret": "$2a$10$FA0ou6Hq7.shKiH56T08ie",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305e3baf436b024310f03f3"
+  },
+  "name": "Md. Arif Hasan",
+  "email": "bsse1112@iit.du.ac.bd",
+  "password": "$2a$10$kqZnoqR6KuKzW.Y/1PHElOZwc34/egiBHpd0lAUnNRMoklH.T/PNW",
+  "saltSecret": "$2a$10$kqZnoqR6KuKzW.Y/1PHElO",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305e3d3f436b024310f03f5"
+  },
+  "name": "Inzamamul Haque",
+  "email": "bsse1113@iit.du.ac.bd",
+  "password": "$2a$10$v8lrLh/wJcxoU4ZH2ty26OqjFddvu53XUdq4w44PrbMGiu.nfZTqG",
+  "saltSecret": "$2a$10$v8lrLh/wJcxoU4ZH2ty26O",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305e87ff436b024310f03fd"
+  },
+  "name": "Mustahid Hasan",
+  "email": "bsse1114@iit.du.ac.bd",
+  "password": "$2a$10$i7m2B8J.BXiObEa113RLJe7bE21Yrw/0FNe2Xfngco79dIrCzKGHq",
+  "saltSecret": "$2a$10$i7m2B8J.BXiObEa113RLJe",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305e9bdf436b024310f0402"
+  },
+  "name": "Jitesh Sureka",
+  "email": "bsse1115@iit.du.ac.bd",
+  "password": "$2a$10$LrSuuWXcS4wovkcREd00R.4lmROAipBK1k8NolVAz6kv28wzko8He",
+  "saltSecret": "$2a$10$LrSuuWXcS4wovkcREd00R.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305e9daf436b024310f0404"
+  },
+  "name": "Md. Muktar Hosen",
+  "email": "bsse1116@iit.du.ac.bd",
+  "password": "$2a$10$AmObV.YG61HE4/xbmE6BzOioZc4lsSQp/871YEzZPwpsdBrZFTsEe",
+  "saltSecret": "$2a$10$AmObV.YG61HE4/xbmE6BzO",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305ea09f436b024310f0408"
+  },
+  "name": "Lutfar Alif",
+  "email": "bsse1120@iit.du.ac.bd",
+  "password": "$2a$10$DmRTfeevKFN/Hoj9y5YHV.6Kz0vScEniDzH78ULjCDHtIhNfx1TXy",
+  "saltSecret": "$2a$10$DmRTfeevKFN/Hoj9y5YHV.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305ea26f436b024310f040a"
+  },
+  "name": "Piash Mahmud",
+  "email": "bsse1121@iit.du.ac.bd",
+  "password": "$2a$10$o2zKfGQdZuqi9DlFaRyFjOHvNELFYzfaP4E.vpaIVe2LlVeg0DHJO",
+  "saltSecret": "$2a$10$o2zKfGQdZuqi9DlFaRyFjO",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305ea3df436b024310f040c"
+  },
+  "name": "Saad Noor",
+  "email": "bsse1122@iit.du.ac.bd",
+  "password": "$2a$10$Q8SUEr1iWsS/OQi67RpBXOyVeMnUczsLqgy3KSBhW5kCU8QHlSHra",
+  "saltSecret": "$2a$10$Q8SUEr1iWsS/OQi67RpBXO",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305eb47f436b024310f040e"
+  },
+  "name": "Shartaz Sajid Nahid",
+  "email": "bsse1123@iit.du.ac.bd",
+  "password": "$2a$10$vRmiziPCZb2J57WckT82EuJezfv3tIZfjPubgMW2NMqd8vVl7Qxhe",
+  "saltSecret": "$2a$10$vRmiziPCZb2J57WckT82Eu",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305eb9df436b024310f0410"
+  },
+  "name": "Shafiq Saleehin",
+  "email": "bsse1125@iit.du.ac.bd",
+  "password": "$2a$10$Iph2TwjLglkktJr2Ki5rg.pUlsDe44rtozYbZkrlYOdrysTD3X9Ki",
+  "saltSecret": "$2a$10$Iph2TwjLglkktJr2Ki5rg.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305ec53f436b024310f0412"
+  },
+  "name": "Dardaul Haque",
+  "email": "bsse1126@iit.du.ac.bd",
+  "password": "$2a$10$8GVnkKIMwQjeLk/ubPCPQOmIWlx5gOImBlPyMfoGKNLiy.8k7fl.6",
+  "saltSecret": "$2a$10$8GVnkKIMwQjeLk/ubPCPQO",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305ec80f436b024310f0414"
+  },
+  "name": "Ahmed Adnan",
+  "email": "bsse1131@iit.du.ac.bd",
+  "password": "$2a$10$LEGsNokz7kaK84V8xhjvveUn0ezb64fYYlm3nH42KkkMQGbWyVkpi",
+  "saltSecret": "$2a$10$LEGsNokz7kaK84V8xhjvve",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6305ec96f436b024310f0416"
+  },
+  "name": "Proma Chowdhury",
+  "email": "bsse1132@iit.du.ac.bd",
+  "password": "$2a$10$jSOKQa1eFVNHi2ZdPAnmn.sghdZa/E1OL5jByb5WOZS0j43SFW7d.",
+  "saltSecret": "$2a$10$jSOKQa1eFVNHi2ZdPAnmn.",
+  "__v": 0
 }]
