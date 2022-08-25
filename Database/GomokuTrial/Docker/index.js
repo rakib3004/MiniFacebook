@@ -1,5 +1,6 @@
 
-const app = require('express')();
+const express = require('express');
+var app = express();
 
 app.get('/', (res,req)=>
 res.json({message: 'Institute of Information Technology'})
