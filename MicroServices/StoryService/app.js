@@ -30,5 +30,7 @@ app.use((err, req, res, next) => {
     }
 });
 
+var port=3003
+
 // start server
-app.listen(3003, () => console.log(`Server started at port : 3003`));
+app.listen(port, () => console.log(`Server started at ${port}`));

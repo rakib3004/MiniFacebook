@@ -39,5 +39,7 @@ app.get('/',(req,res)=>{
     })
 })
 
+var port=3002
+
 // start server
-app.listen(3002, () => console.log(`Server started at port : 3002`));
+app.listen(port, () => console.log(`Server started at ${port}`));
