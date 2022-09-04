@@ -1,2 +1,1 @@
 sudo docker-compose up --build
-docker 
