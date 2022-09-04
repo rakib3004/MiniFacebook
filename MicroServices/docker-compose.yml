@@ -22,7 +22,7 @@ services:
     userdb:
         image: mongo
         ports: 
-            - 27017:27017
+            - 27018:27017
         restart: unless-stopped
         volumes:
             - /mongo:/data/db
@@ -35,7 +35,7 @@ services:
     statusdb:
         image: mongo
         ports: 
-            - 27017:27017
+            - 27019:27017
         restart: unless-stopped
         volumes:
             - /mongo:/data/db
@@ -50,7 +50,7 @@ services:
     storydb:
         image: mongo
         ports: 
-            - 27017:27017
+            - 27020:27017
         restart: unless-stopped
         volumes:
             - /mongo:/data/db
