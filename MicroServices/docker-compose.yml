@@ -5,7 +5,7 @@ services:
         image: nginx
         restart: unless-stopped
         ports:
-            - 80:80
+            - 100:80
         volumes:
             - ./nginx.conf:/etc/nginx/sites-enabled/default.conf
         depends_on:
