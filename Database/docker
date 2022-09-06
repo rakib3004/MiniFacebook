@@ -1,1 +1,3 @@
+sudo docker image build -t rakib3004/user .
+sudo docker container run -d -p 3001:3001 rakib3004/user 
 sudo docker-compose up --build
