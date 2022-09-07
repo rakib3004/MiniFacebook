@@ -1,0 +1,96 @@
+version: "3.0"
+
+services:
+
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - authentication-service
+      - status-service
+      - story-service
+
+  db-auth:
+    image: mongo:4.0-xenial
+    ports:
+      - 27018:27017
+    volumes:
+      - accountDB:/data/db
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: password
+    #   MONGO_INITDB_ROOT_DATABASE: root-db
+
+  db-status:
+    image: mongo:4.0-xenial
+    ports:
+      - 27019:27017
+    volumes:
+      - statusDB:/data/db
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: password
+    #   MONGO_INITDB_ROOT_DATABASE: root-db
+
+  db-story:
+    image: mongo:4.0-xenial
+    ports:
+      - 27020:27017
+    volumes:
+      - storyDB:/data/db
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: password
+    #   MONGO_INITDB_ROOT_DATABASE: root-db
+
+  storyobjectdb:
+    image: minio/minio:latest
+    ports:
+      - 9000:9000
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=miniostorage
+    command: server --address 0.0.0.0:9000 /data
+
+  authentication-service:
+    build: ./authentication
+    restart: unless-stopped
+    ports:
+      - 4100:4100
+    depends_on:
+      - db-auth
+    # environment:
+    #   DB_URL: mongodb://db-account/AccountDatabase
+
+  status-service:
+    build: ./status
+    restart: unless-stopped
+    ports:
+      - 4200:4200
+    depends_on:
+      - authentication-service
+      - db-status
+    # environment:
+    #   DB_URL: mongodb://db-status/StatusDatabase
+
+  story-service:
+    build: ./story
+    restart: unless-stopped
+    ports:
+      - 4300:4300
+    depends_on:
+      - db-story
+      - authentication-service
+      - storyobjectdb
+    # environment:
+    #   DB_URL: mongodb://db-story/StoryDatabases
+  
+  
+volumes:
+  statusDB:
+  storyDB:
+  accountDB:
