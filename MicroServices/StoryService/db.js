@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose_connection_path = 'mongodb://localhost:27017/StoryDB'
+mongoose_connection_path = 'mongodb://storydb:27017/story'
 
 mongoose.connect(mongoose_connection_path, (err) => {
     if (!err) { console.log('MongoDB connection succeeded.'); }

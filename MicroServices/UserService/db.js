@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose_connection_path = 'mongodb://localhost:27017/UserDB'
+mongoose_connection_path = 'mongodb://userdb:27017/user'
 
 mongoose.connect(mongoose_connection_path, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
     if (!err) { console.log('MongoDB connection succeeded.'); }

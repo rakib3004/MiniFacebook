@@ -2,12 +2,12 @@ version: "3"
 
 services:
     nginx:
-        image: nginx
+        image: nginx:latest
         restart: unless-stopped
         ports:
-            - 100:80
+            - 100:100
         volumes:
-            - ./nginx.conf:/etc/nginx/sites-enabled/default.conf
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
         depends_on:
             - userservice
             - statusservice
@@ -20,12 +20,12 @@ services:
             - userdb
 
     userdb:
-        image: mongo
+        image: mongo:4.0-xenial
         ports: 
             - 27018:27017
         restart: unless-stopped
         volumes:
-            - /mongo:/data/db
+            - ./mongoUser:/data/db
     statusservice:
         build: ./StatusService
         restart: unless-stopped
@@ -33,12 +33,12 @@ services:
             - statusdb
 
     statusdb:
-        image: mongo
+        image: mongo:4.0-xenial
         ports: 
             - 27019:27017
         restart: unless-stopped
         volumes:
-            - /mongo:/data/db
+            - ./mongoStatus:/data/db
 
     storyservice:
         build: ./StoryService
@@ -48,12 +48,12 @@ services:
             - storyobjectdb
 
     storydb:
-        image: mongo
+        image: mongo:4.0-xenial
         ports: 
             - 27020:27017
         restart: unless-stopped
         volumes:
-            - /mongo:/data/db
+            - ./mongoStory:/data/db
 
     storyobjectdb:
         image: minio/minio:latest
@@ -61,3 +61,8 @@ services:
             - MINIO_ACCESS_KEY=ulDoUo3BcZ0HK4P4
             - MINIO_SECRET_KEY=JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo
         command: server --address 0.0.0.0:9000 /data
+
+volumes:
+    mongoUser:
+    mongoStatus:
+    mongoStory:

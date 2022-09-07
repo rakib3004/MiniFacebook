@@ -1,7 +1,7 @@
 {
     "development": {
         "PORT": 3000,
-        "MONGODB_URI": "mongodb://storyservice:27017/storydb",
+        "MONGODB_URI": "mongodb://storydb:27017/storydb",
         "JWT_SECRET": "SECRET#123",
         "JWT_EXP": "10m"
     },

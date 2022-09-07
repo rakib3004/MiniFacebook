@@ -1,7 +1,7 @@
 {
     "development": {
         "PORT": 3000,
-        "MONGODB_URI": "mongodb://userservice:27017/userdb",
+        "MONGODB_URI": "mongodb://userdb:27017/user",
         "JWT_SECRET": "SECRET#123",
         "JWT_EXP": "10m"
     },
