@@ -4,8 +4,12 @@ var story = require('../models/story');
 const crypto = require('crypto');
 
 const server_ip = '127.0.0.1'
-const accessKey = 'ulDoUo3BcZ0HK4P4'
-const secretKey = 'JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo'
+const accessKey = 'W39XDvxvVcYYOIpz'
+const secretKey = 'HtyHG1IKzWhjeuGdqIzasFOnv0pK0vpT'
+
+/*const accessKey = 'ulDoUo3BcZ0HK4P4'
+const secretKey = 'JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo'*/
+
 const port = 9000
 
 module.exports.saveStory = (async (req, res) => {
