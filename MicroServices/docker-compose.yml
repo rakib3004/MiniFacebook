@@ -12,6 +12,14 @@ services:
             - userservice
             - statusservice
             - storyservice
+    frontend:
+        container_name: frontend
+        build: ./../FrontEnd
+        restart: unless-stopped
+        ports:
+            - 4200:4200
+        depends_on:
+            - nginx
 
     userservice:
         build: ./UserService
