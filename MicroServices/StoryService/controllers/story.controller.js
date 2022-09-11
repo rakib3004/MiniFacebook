@@ -3,7 +3,7 @@ var Minio = require("minio");
 var story = require('../models/story');
 const crypto = require('crypto');
 
-const server_ip = '127.0.0.1'
+const server_ip = 'storyobjectdb'
 /*const accessKey = 'W39XDvxvVcYYOIpz'
 const secretKey = 'HtyHG1IKzWhjeuGdqIzasFOnv0pK0vpT'*/
 
@@ -45,7 +45,7 @@ module.exports.saveStory = (async (req, res) => {
 
 module.exports.getStories = (async (req,res) =>{
     try{
-        const Stories = await story.find({email:{$ne: req.params.currentUser}}).sort({$natural:-1}).limit(20); 
+        const Stories = await story.find({email:{$ne: req.params.currentUser}}).sort({$natural:-1}).limit(5); 
         res.send(Stories);
     } catch(err){
         res.status(400).send({ResponeseMessage: 'Missing Image File'});
