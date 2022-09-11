@@ -69,8 +69,8 @@ services:
             - 9000:9000
             - 9001:9001
         environment:
-            - MINIO_ACCESS_KEY=ulDoUo3BcZ0HK4P4
-            - MINIO_SECRET_KEY=JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo
+            - MINIO_ACCESS_KEY=minioadmin
+            - MINIO_SECRET_KEY=minioadmin
         command: server --address 0.0.0.0:9000 /data --console-address=":9001"
 
 volumes:

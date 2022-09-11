@@ -7,8 +7,8 @@ const server_ip = 'storyobjectdb'
 /*const accessKey = 'W39XDvxvVcYYOIpz'
 const secretKey = 'HtyHG1IKzWhjeuGdqIzasFOnv0pK0vpT'*/
 
-const accessKey = 'ulDoUo3BcZ0HK4P4'
-const secretKey = 'JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo'
+const accessKey = 'minioadmin'
+const secretKey = 'minioadmin'
 
 const port = 9000
 
