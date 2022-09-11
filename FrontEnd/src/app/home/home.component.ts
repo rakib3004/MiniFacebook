@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   serverErrorMessages: string = 'false';
   storyImageBaseUrl = environment.storyBaseUrl;
   profileImageBaseUrl = environment.profileBaseUrl;
+
+  staticIcon = "./user.png"
   postDetails ={
     email:'',
     name :'',
@@ -52,7 +54,8 @@ export class HomeComponent implements OnInit {
         this.currentUserName = this.userDetails.name;
         this.firstUserNameLetter= this.userDetails.name[0];
         console.log(this.firstUserNameLetter)
-        this.profilePhoto=this.profileImageBaseUrl+this.firstUserNameLetter+this.imageExtention;
+        //this.profilePhoto=this.profileImageBaseUrl+this.firstUserNameLetter+this.imageExtention;
+        this.profilePhoto="./user.png";
         this.getPosts();
         this.getStories();
       },

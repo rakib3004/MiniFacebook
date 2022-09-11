@@ -8,7 +8,7 @@
 
     <div class="nav-right">
 
-            <img style="height: 40px; width: 40px" src={{profilePhoto}} alt="">
+            <!-- <img style="height: 40px; width: 40px" src={{profilePhoto}} alt=""> -->
             <h3 class="name mr-4 ml-2"><b>{{currentUserName}}</b></h3>
        
     
@@ -36,7 +36,7 @@
 
             <div class="story create">
                 <div class="dp-image">
-                    <img src={{profilePhoto}} alt="__">
+                    <!-- <img src={{profilePhoto}} alt="__"> -->
                 </div>
 
                 <div *ngIf="createStoryClicked==1" class="mine">
@@ -57,7 +57,7 @@
             <div *ngFor="let story of timeLineStories" class="story">
                 <img class="story-bg" src={{story.storyUUID}} alt="....">
                 <div class="dp-container">
-                    <img src={{profileImageBaseUrl+story.name[0]+imageExtention}}  alt="">
+                    <!-- <img src={{profileImageBaseUrl+story.name[0]+imageExtention}}  alt=""> -->
                 </div>
                 <p class="name">{{story.name}}</p>
             </div>
@@ -67,7 +67,7 @@
         <div class="post create">
             <div class="post-top">
                 <div class="dp">
-                    <img src={{profilePhoto}} alt="">
+                    <!-- <img src={{profilePhoto}} alt=""> -->
                 </div>
                 <input type="text" placeholder="What's on your mind..?" [(ngModel)] = "postDetails.text" [ngModelOptions]="{standalone: true}"/>
                 <button class="btn btn-success post-btn"  (click)="UploadPost()">Post</button>
@@ -78,7 +78,7 @@
         <div class="post" *ngFor="let post of timeLinePosts;">
             <div class="post-top">
                 <div class="dp">
-                    <img src={{profileImageBaseUrl+post.name[0]+imageExtention}} alt="">
+                    <img src={{staticIcon}} alt="">
                 </div>
                 <div class="post-info">
                     <p class="name">{{post.name}}</p>
