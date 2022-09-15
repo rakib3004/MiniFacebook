@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   storyImageBaseUrl = environment.storyBaseUrl;
   profileImageBaseUrl = environment.profileBaseUrl;
 
-  staticIcon = "./user.png"
+  staticIcon = "../../assets/user.png"
   postDetails ={
     email:'',
     name :'',
