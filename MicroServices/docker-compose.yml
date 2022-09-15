@@ -2,7 +2,7 @@ version: "3"
 
 services:
     nginx:
-        image: nginx:latest
+        image: nginx:alpine
         build: .
         restart: unless-stopped
         ports:
@@ -65,7 +65,7 @@ services:
             - ./mongoStory:/data/db
 
     storyobjectdb:
-        image: minio/minio:latest
+        image: minio/minio
         ports:
             - 9000:9000
             - 9001:9001
