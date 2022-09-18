@@ -2,8 +2,8 @@ version: "3"
 
 services:
     nginx:
-        image: nginx:alpine
-        build: .
+        image: rakib3004/frontend
+        # build: .
         restart: unless-stopped
         ports:
             - 100:100
