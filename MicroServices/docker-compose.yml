@@ -2,7 +2,7 @@ version: "3"
 
 services:
     nginx:
-        # image: rakib3004/frontend
+        image: rakib3004/frontend
         build: .
         restart: unless-stopped
         ports:
@@ -13,6 +13,7 @@ services:
             - storyservice
 
     userservice:
+        image: rakib3004/userservice
         build: ./UserService
         restart: unless-stopped
         depends_on:
@@ -27,6 +28,7 @@ services:
             - mongoUser:/data/db
     
     statusservice:
+        image: rakib3004/statusservice
         build: ./StatusService
         restart: unless-stopped
         depends_on:
@@ -41,6 +43,7 @@ services:
             - mongoStatus:/data/db
 
     storyservice:
+        image: rakib3004/storyservice
         build: ./StoryService
         restart: unless-stopped
         depends_on:
