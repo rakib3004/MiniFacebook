@@ -30,6 +30,32 @@ app.use((err, req, res, next) => {
     }
 });
 
+const minioClient = new Minio.Client({
+    endPoint: server_ip,
+    port: port,
+    useSSL: false,
+    accessKey: accessKey,
+    secretKey: secretKey
+});
+
+const bucketName = "stories";
+
+(async () => {
+  console.log(`Creating Bucket: ${bucketName}`);
+  await minioClient.makeBucket(bucketName, "hello-there").catch((e) => {
+      console.log(
+          `Error while creating bucket '${bucketName}': ${e.message}`
+      );
+  });
+
+  console.log(`Listing all buckets...`);
+  const bucketsList = await minioClient.listBuckets();
+  console.log(
+      `Buckets List: ${bucketsList.map((bucket) => bucket.name).join(",\t")}`
+  );
+})();
+
+
 var port=3003
 
 // start server

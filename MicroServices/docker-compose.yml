@@ -2,25 +2,15 @@ version: "3"
 
 services:
     nginx:
-        image: rakib3004/frontend
-        # build: .
+        # image: rakib3004/frontend
+        build: .
         restart: unless-stopped
         ports:
             - 100:100
-        volumes:
-            - ./nginx.conf:/etc/nginx/conf.d/default.conf
         depends_on:
             - userservice
             - statusservice
             - storyservice
-    # frontend:
-    #     container_name: frontend
-    #     build: ./../FrontEnd
-    #     restart: unless-stopped
-    #     ports:
-    #         - 4200:4200
-    #     depends_on:
-    #         - nginx
 
     userservice:
         build: ./UserService
@@ -30,11 +20,12 @@ services:
 
     userdb:
         image: mongo:4.0-xenial
-        ports: 
-            - 27018:27017
+        # ports: 
+        #     - 27018:27017
         restart: unless-stopped
         volumes:
-            - ./mongoUser:/data/db
+            - mongoUser:/data/db
+    
     statusservice:
         build: ./StatusService
         restart: unless-stopped
@@ -43,11 +34,11 @@ services:
 
     statusdb:
         image: mongo:4.0-xenial
-        ports: 
-            - 27019:27017
+        # ports: 
+        #     - 27019:27017
         restart: unless-stopped
         volumes:
-            - ./mongoStatus:/data/db
+            - mongoStatus:/data/db
 
     storyservice:
         build: ./StoryService
@@ -58,11 +49,11 @@ services:
 
     storydb:
         image: mongo:4.0-xenial
-        ports: 
-            - 27020:27017
+        # ports: 
+        #     - 27020:27017
         restart: unless-stopped
         volumes:
-            - ./mongoStory:/data/db
+            - mongoStory:/data/db
 
     storyobjectdb:
         image: minio/minio
