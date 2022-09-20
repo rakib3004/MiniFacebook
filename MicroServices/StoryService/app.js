@@ -6,6 +6,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
+var Minio = require("minio");
+
 
 
 const rtsIndex = require('./routes/index.router');
@@ -30,9 +32,17 @@ app.use((err, req, res, next) => {
     }
 });
 
+
+
+const server_ip = 'storyobjectdb'
+
+const accessKey = 'minioadmin'
+const secretKey = 'minioadmin'
+
+const port_minio = 9000
 const minioClient = new Minio.Client({
     endPoint: server_ip,
-    port: port,
+    port: port_minio,
     useSSL: false,
     accessKey: accessKey,
     secretKey: secretKey
