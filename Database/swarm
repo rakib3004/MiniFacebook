@@ -1,1 +1,4 @@
+sudo docker swarm init 
 sudo  docker swarm join --token SWMTKN-1-65ohns2og89glpjj77evt8keflz3qtuk35hnwjoyoj29nxymt3-4gchkqyortx6d88xrjml4vrqh 10.100.100.177:2377
+sudo docker stack deploy --compose-file docker-compose.yml rakib
+sudo docker stack services rakib

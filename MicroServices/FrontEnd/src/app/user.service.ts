@@ -14,11 +14,11 @@ export class UserService {
   constructor(private _http:HttpClient) { }
 
   postUser(user:any){
-    return this._http.post(environment.apiBaseUrl+'user/register',user,this.noAuthHeader);
+    return this._http.post(environment.userService+'user/register',user,this.noAuthHeader);
   }
 
   login(authCredentials:any) {
-    return this._http.post(environment.apiBaseUrl + 'user/authenticate', authCredentials, this.noAuthHeader);
+    return this._http.post(environment.userService + 'user/authenticate', authCredentials, this.noAuthHeader);
   }
 
   getUserProfile() {
