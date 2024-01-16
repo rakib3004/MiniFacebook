@@ -1,0 +1,100 @@
+<nav>
+    <div class="nav-left">
+        <img src="../assets/fb-icon.png" alt="Logo">
+        <a href="#" > <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" class="logo" alt="Facebook" /> </a>
+    </div>
+
+   
+
+    <div class="nav-right">
+
+            <!-- <img style="height: 40px; width: 40px" src={{profilePhoto}} alt=""> -->
+            <h3 class="name mr-4 ml-2"><b>{{currentUserName}}</b></h3>
+       
+    
+            
+    <button (click)="logout()" type="button" class="btn btn-danger p-3 font-weight-bold">log out</button>
+        
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="left-panel">
+        <ul>
+            <li>
+                <span class="profile"></span>
+           
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="middle-panel">
+
+        <div class="story-section">
+
+            <div class="story create">
+                <div class="dp-image">
+                    <!-- <img src={{profilePhoto}} alt="__"> -->
+                </div>
+
+                <div *ngIf="createStoryClicked==1" class="mine">
+                    <input type="file" accept="image/*" (change)="uploadStory($event)">
+                    <div class="card-img" alt="..."></div>
+                   
+                </div>
+                
+               
+                
+                <span *ngIf="createStoryClicked==0" (click)="changeStoryClicked()" class="dp-container">                     
+                   
+                </span>
+                <span class="name">Create Story</span>  
+            </div>
+
+            
+            <div *ngFor="let story of timeLineStories" class="story">
+                <img class="story-bg" src={{story.storyUUID}} alt="....">
+                <div class="dp-container">
+                    <!-- <img src={{profileImageBaseUrl+story.name[0]+imageExtention}}  alt=""> -->
+                </div>
+                <p class="name">{{story.name}}</p>
+            </div>
+
+        </div>
+
+        <div class="post create">
+            <div class="post-top">
+                <div class="dp">
+                    <!-- <img src={{profilePhoto}} alt=""> -->
+                </div>
+                <input type="text" placeholder="What's on your mind..?" [(ngModel)] = "postDetails.text" [ngModelOptions]="{standalone: true}"/>
+                <button class="btn btn-success post-btn"  (click)="UploadPost()">Post</button>
+            </div>
+            
+        </div>
+
+        <div class="post" *ngFor="let post of timeLinePosts;">
+            <div class="post-top">
+                <!-- <div class="dp">
+                    <img src="../../assets/user.png" alt="">
+                </div> -->
+                <div class="post-info">
+                    <p class="name">{{post.name}}</p>
+                    <span class="time">{{post.creation_dt}}</span>
+                </div>
+                <i class="fas fa-ellipsis-h"></i>
+            </div>
+
+            <div class="post-content">
+               {{post.text}}
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="right-panel"></div>
+</div>
+

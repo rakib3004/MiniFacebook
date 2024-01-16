@@ -1,0 +1,38 @@
+
+<div class="main">
+  <div class="alert-box-container">
+    <div class="success" *ngIf="showSucessMessage">
+      Congratulations!!! Your Account Created Successfully. You can Login Now.
+    </div>
+    <!-- Error message -->
+    <div class="alert" *ngIf="serverErrorMessages!='false'">
+      {{serverErrorMessages}}
+    </div>
+  </div>
+
+    <form [formGroup]="registerForm">
+      <h2 class="first_title">Sign Up</h2>
+      <p class="first_sub_title" id="sub_title">It's quick and easy.</p>
+      <hr />
+      <!--Input section start-->
+      <div class="input">
+        <input type="text" placeholder="Enter your Name" formControlName="name" class="form-control" id="all1" />
+        <small id="textHelp" class="form-text text-muted"></small>
+        <br/>
+        <input type="email" placeholder="Enter your email" formControlName="email" class="form-control" id="all1" required aria-describedby="emailHelp"/>
+        <small id="emailHelp" class="form-text text-muted"></small>
+        <br />
+        
+        <input formControlName="password" type="password" class="form-control" id="all1" aria-describedby="passHelp" placeholder="Enter password">
+        <small id="passHelp" class="form-text text-muted"></small>
+        <br />
+        <input formControlName="cpass" type="password" class="form-control" id="all1" aria-describedby="CpassHelp" placeholder=" Confirm password">
+        <small id="CpassHelp" class="form-text text-muted"></small>
+      </div>   
+      <br />
+      <input type="submit" value="Signup" (click)="register()" class="submit" />
+      <p>Already have an Account? <a href="#" (click)="moveToLogin()">Log In</a></p>
+    </form>
+  </div>
+  
+  
