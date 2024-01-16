@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   
   serverErrorMessages: string = 'false';
 
-  facebookLogo = environment.fbLogo;
 
   loginForm : FormGroup=new FormGroup({
     email:new FormControl(null,[Validators.email,Validators.required]),
