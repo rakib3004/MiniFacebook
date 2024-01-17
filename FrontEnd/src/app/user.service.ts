@@ -14,15 +14,16 @@ export class UserService {
   constructor(private _http:HttpClient) { }
 
   postUser(user:any){
-    return this._http.post(environment.userService+'user/register',user,this.noAuthHeader);
+    return this._http.post(environment.apiBaseUrl+'/register',user,this.noAuthHeader);
+
   }
 
   login(authCredentials:any) {
-    return this._http.post(environment.userService + 'user/authenticate', authCredentials, this.noAuthHeader);
+    return this._http.post(environment.apiBaseUrl + '/login', authCredentials, this.noAuthHeader);
   }
 
   getUserProfile() {
-    return this._http.get(environment.apiBaseUrl + 'user/userProfile');
+    return this._http.get(environment.apiBaseUrl + '/userProfile');
   }
 
 
@@ -62,7 +63,7 @@ export class UserService {
   isLoggedIn(){
     var userPayload = this.getUserPayload();
     if (userPayload)
-      return userPayload.exp > Date.now() / 1000;
+      return userPayload.exp > Date.now() / 12;
     else
       return false;
   }

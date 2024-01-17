@@ -16,7 +16,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
-app.use('/api', rtsIndex);
+app.use('/api/v1', rtsIndex);
 
 // error handler
 app.use((err, req, res, next) => {

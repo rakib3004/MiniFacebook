@@ -10,10 +10,10 @@ export class StoryService {
   constructor(private http:HttpClient) { }
 
   uploadStory(postDetails:any){
-    return this.http.post(environment.storyService+'story/story/',postDetails);
+    return this.http.post(environment.apiBaseUrl+'/story',postDetails);
   }
   
   getStories(currentUser:any){
-    return this.http.get(environment.storyService+'story/story/'+currentUser);
+    return this.http.get(environment.apiBaseUrl+'/story/'+currentUser);
   }
 }
