@@ -22,9 +22,10 @@ module.exports.savePost = (req, res, next) => {
 }
 
 module.exports.getPosts = (req, res, next) => {
-    console.log(req.params.currentUser);
+    console.log('user in post controller: ',req.params.currentUser);
     let posts = Post.find({email:{$ne: req.params.currentUser}}).limit(10).sort({$natural:-1});
     posts.exec((req, doc) =>{
+        console.log('Posts are from post.controller using mongoose orm', doc);
         return res.status(200).json(doc);
     })
 }

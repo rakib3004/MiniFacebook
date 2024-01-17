@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
   storyImageBaseUrl = environment.storyBaseUrl;
   profileImageBaseUrl = environment.profileBaseUrl;
 
-  staticIcon = "../../assets/user.png"
+  userIcon = "../../assets/user.png";
+  friendIcon = "../../assets/friend.png";
   postDetails ={
     email:'',
     name :'',
@@ -86,6 +87,7 @@ export class HomeComponent implements OnInit {
         //change story url 
         this.timeLineStories.forEach((story:any) => {
           story.storyUUID = this.storyImageBaseUrl+story.storyUUID;
+          
         });
     },
     err => {
@@ -102,7 +104,8 @@ export class HomeComponent implements OnInit {
       (res:any) => {
         alert("Post Uploaded Successfuly!!!");
         this.getPosts();
-        this.router.navigate(['/login']);
+        this.postDetails.text = '';
+
       },
       err => {
         this.serverErrorMessages = err.error.message;

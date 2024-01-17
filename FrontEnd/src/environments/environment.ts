@@ -4,7 +4,7 @@
 export const environment = {
   production: false,
   apiBaseUrl: 'http://127.0.0.1:3000/api/v1',
-  storyBaseUrl :"http://127.0.0.1:3000/api/v1",
+  storyBaseUrl :"http://127.0.0.1:9000/mini-facebook/",
   profileBaseUrl :"http://127.0.0.1:3000/api/v1",
   // userService: "http://userservice:3001",
   // statusService: "http://statusservice:3002",

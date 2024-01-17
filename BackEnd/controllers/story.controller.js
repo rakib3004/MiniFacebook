@@ -4,10 +4,14 @@ var story = require('../models/story');
 const crypto = require('crypto');
 
 const server_ip = '127.0.0.1'
-const accessKey = 'ulDoUo3BcZ0HK4P4'
-const secretKey = 'JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo'
+// const accessKey = 'ulDoUo3BcZ0HK4P4'
+// const secretKey = 'JH4f31eN8YAg9kn3BQUsh3cuoVGPNedo'
 /*const accessKey= 'W39XDvxvVcYYOIpz'
 const secretKey = 'HtyHG1IKzWhjeuGdqIzasFOnv0pK0vpT'*/
+
+
+const accessKey = 'Lf2ACal2niokGMSri3Cx'
+const secretKey = 'GaOrN85frGcI618hDwUJlIErX3gC0opT0ol4rilz'
 
 const port = 9000
 
@@ -22,8 +26,8 @@ module.exports.saveStory = (async (req, res) => {
     });
 
     var uuidName = crypto.randomUUID();
-    console.log(JSON.stringify(req.file))
-    minioClient.fPutObject('stories', uuidName, req.file.path, function (err, objInfo) {
+    // console.log(JSON.stringify(req.file))
+    minioClient.fPutObject('mini-facebook', uuidName, req.file.path, function (err, objInfo) {
         if(err) {return console.log(err)}
     });
 
