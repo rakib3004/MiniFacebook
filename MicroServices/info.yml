@@ -1,7 +1,6 @@
 version: "3.0"
 
 services:
-
   nginx:
     image: nginx:latest
     restart: unless-stopped
@@ -20,10 +19,6 @@ services:
       - 27018:27017
     volumes:
       - accountDB:/data/db
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: root
-    #   MONGO_INITDB_ROOT_PASSWORD: password
-    #   MONGO_INITDB_ROOT_DATABASE: root-db
 
   db-status:
     image: mongo:4.0-xenial
@@ -31,10 +26,6 @@ services:
       - 27019:27017
     volumes:
       - statusDB:/data/db
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: root
-    #   MONGO_INITDB_ROOT_PASSWORD: password
-    #   MONGO_INITDB_ROOT_DATABASE: root-db
 
   db-story:
     image: mongo:4.0-xenial
@@ -42,10 +33,6 @@ services:
       - 27020:27017
     volumes:
       - storyDB:/data/db
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: root
-    #   MONGO_INITDB_ROOT_PASSWORD: password
-    #   MONGO_INITDB_ROOT_DATABASE: root-db
 
   storyobjectdb:
     image: minio/minio:latest
@@ -63,8 +50,6 @@ services:
       - 4100:4100
     depends_on:
       - db-auth
-    # environment:
-    #   DB_URL: mongodb://db-account/AccountDatabase
 
   status-service:
     build: ./status
@@ -74,8 +59,6 @@ services:
     depends_on:
       - authentication-service
       - db-status
-    # environment:
-    #   DB_URL: mongodb://db-status/StatusDatabase
 
   story-service:
     build: ./story
@@ -86,8 +69,6 @@ services:
       - db-story
       - authentication-service
       - storyobjectdb
-    # environment:
-    #   DB_URL: mongodb://db-story/StoryDatabases
   
   
 volumes:
